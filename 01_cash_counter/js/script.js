@@ -1,12 +1,12 @@
-const number = document.querySelector('body');
-number.style.backgroundColor ='rgb(156, 116, 105)';
+const body = document.querySelector('body');
+body.style.backgroundColor ='rgb(156, 116, 105)';
+body.style.fontSize = '4rem';
 
+const haveEnough = (totalCash, watchesCount, watchesPrice, earringsCount, earringsPrice) => {
+ let watchesSum = watchesPrice * watchesCount;
+ let earringsSum = earringsPrice * earringsCount;
+ let result = (totalCash >= watchesSum + earringsSum)? 'Enough $$$': 'Not enough $$$';
+ return result;
+}
 
-let totalCash = Number(prompt('Skolko seichas deneg est? (dollarov)'));
-let watchesCount = Number(prompt('Skolko watches hochetsa kupit? (shtook)'));
-let earringsCount = Number(prompt('Skolko serejek hochetsa kupit? (shtook)'));
-
-let watchesSum = Number(prompt('Skolko stoyat odin watches? (dollarov)') * parseInt(watchesCount));
-let earringsSum = Number(prompt('Skolko stoyat odin serejka? (dollarov)') * parseInt(earringsCount));
-
-document.write(totalCash >= watchesSum + earringsSum);
+document.write(haveEnough(500, 1, 250, 1, 250));
