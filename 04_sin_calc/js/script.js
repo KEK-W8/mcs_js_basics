@@ -12,5 +12,6 @@ const result = document.querySelector('.sin')
 
 form.onsubmit = (element)=>{
  element.preventDefault();
- result.innerHTML = 'Sin' + '('+ form.elements.number.value + ')' + ' = ' + Math.sin(form.elements.number.value);
+ const rad = (form.elements.number.value*Math.PI/180);
+ result.innerHTML = 'Sin' + '('+ form.elements.number.value + ')' + ' = ' + Math.sin(rad);
 }
