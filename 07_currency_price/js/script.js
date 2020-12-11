@@ -13,30 +13,31 @@ let crypto = [
   }
 ];
 
-const divs = document.getElementsByTagName('div');
-const values = document.querySelectorAll('.value')
-const types =  document.getElementsByClassName('type');
+console.log(crypto)
 
-for (div of divs) {
-  div.style.backgroundColor = "blue";
-  div.style.width = '400px';
-  div.style.height = '30px';
-  div.style.marginBottom = '20px'
+function addName(name) {
+ var addName = document.createElement('h2')
+ addName.innerHTML = name
+ document.body.appendChild(addName)
 }
 
-const names = crypto.map(currencyName =>{
-  return currencyName.name
-})
+function addPrice(price) {
+ var addPrice = document.createElement('p')
+ addPrice.innerHTML = `${price} $`
+ document.body.appendChild(addPrice)
+}
 
-const prices = crypto.map(currencyPrice => {
-  return parseInt(currencyPrice.price);
-})
+function addBar(price, r) {
+ var addBar = document.createElement('div')
+ addBar.className = 'price-bar'
+ addBar.style.backgroundColor = `rgb(${r},100,0)`
+ addBar.style.height = '30px'
+ addBar.style.width = `${price}%`
+ document.body.appendChild(addBar)
+}
 
-for(i=0; i<divs.length; i++){
-  types[i].innerHTML = names[i];
-  values[i].innerHTML = prices[i] + ' $';
-  divs[1].style.width = (prices[1] * 400 / prices[0]) + 'px';
-  divs[1].style.backgroundColor = 'red';
-  divs[2].style.width = (prices[2] * 400 / prices[0]) + 'px';
-  divs[2].style.backgroundColor = 'green';
+for(let i=0; i < crypto.length; i++){
+ addName(crypto[i].name);
+ addPrice(crypto[i].price);
+ addBar((crypto[i].price*100/crypto[0].price),(100*i));
 }
