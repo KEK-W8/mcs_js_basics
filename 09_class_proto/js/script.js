@@ -13,10 +13,10 @@ class angryTiger extends Tiger {
   }
 }
 
-const kisya = new Tiger('Jack')
-console.log(kisya)
-console.log(kisya.feedCat())
+const jack = new Tiger('Jack')
+console.log(jack)
+console.log(jack.feedCat())
 
-const kot = new angryTiger('Kek')
-console.log(kot)
-console.log(kot.throwDart())
+const kek = new angryTiger('Kek')
+console.log(kek)
+console.log(kek.throwDart())

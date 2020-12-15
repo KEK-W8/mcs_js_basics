@@ -23,7 +23,7 @@ form.onsubmit = (e)=>{
   let DATA = JSON.parse(xhr.responseText);
   console.log(DATA);
   heading.innerHTML = 'Today\'s weather in ' + String(city) +' is listed below'
-  result.innerHTML = 'Temperature: ' + (parseInt(DATA.main.temp) - 273) + '°C' + '\r\n' + "Humidity: " + DATA.main.humidity + '%' + '\r\n' + 'Wind: ' + DATA.wind.speed + ' m/s';  
+  result.innerHTML = 'Temperature: ' + (parseInt(DATA.main.temp) - 273) + '°C' + '<br>' + "Humidity: " + DATA.main.humidity + '%' + '<br>' + 'Wind: ' + DATA.wind.speed + ' m/s';  
 }
   console.log(city)
 }
